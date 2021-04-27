@@ -88,7 +88,9 @@ const updateMonitor = async monitor => {
 
   const message = `${monitor.description}\n\n---\n\n${JSON.stringify(
     monitor.contributors
-  )}\n\n---\n\n${core.getInput('alertSlackChannel')} ${mentions}`;
+  )}\n\n---\n\n${
+    mentions && core.getInput('alertSlackChannel')
+  } ${mentions}`;
 
   await request({
     method: 'PUT',
