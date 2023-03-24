@@ -17,11 +17,11 @@ inputs:
     description: 'The total minutes we wish contributors to be notified of related changes after they have been released'
     required: true
   gitHubSlackUserLookup:
-    description: 'Lookup JSON object between GitHub username to Slack Memeber Id'
+    description: 'Lookup JSON object between GitHub username to Slack Member Id'
     required: true
   GITHUB_TOKEN:
     description: 'Used to fetch the release upon successful deployment events'
     required: false
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
